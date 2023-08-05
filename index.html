@@ -1,1 +1,403 @@
-<h1>hello world</h1>
+<!DOCTYPE html>
+<html lang="en"><!--搜索语言为英文-->
+	<head>
+		<meta charset="UTF-8"> 
+		<meta name="viewport" content="width=device-width initial-scale=1.0"> 
+		<title>我的网页</title>
+		<link rel="stylesheet" type="text/css" href="../css/index.css">
+ 
+	</head>
+	
+	<body>
+		<div class="container">
+			<div class="menu-bar">
+				<div class="logo">
+					<h1>我所热爱的<span>事物</span></h1>
+				</div>
+				
+				<ul class="ullist">
+
+					<li class="libt"><a href="./index.html">首页<i class="fa fa-house-user"></i></a></li>
+				</ul>
+				
+				<ul class="righ">
+					<li class="libt"><a href="./person.html" >个人介绍<i class="fa fa-user"></i></a></li>
+				</ul>
+			</div>
+
+			<div class="introduction">
+				<div class="card">
+					<div class="photo">
+						<img src="https://img1.baidu.com/it/u=3043405165,2945772706&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500">
+					</div>
+						<h1>游戏</h1>
+						<p></p>
+						<a href="./game.html">了解更多</a>
+				</div>
+				<div class="card">
+					<div class="photo">
+						<img src="https://img1.baidu.com/it/u=184419055,1027426963&fm=253&fmt=auto&app=120&f=JPEG?w=1280&h=800">
+					</div>
+						<h1 style="color: aliceblue;">动漫</h1>
+						<p></p>
+						<a href="./comic.html">了解更多</a>
+				</div>
+				<div class="card">
+					<div class="photo">
+						<img src="https://img1.baidu.com/it/u=2840620388,3225093605&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500">
+					</div>
+						<h1>小说</h1>
+						<p></p>
+						<a href="../html/fiction.html">了解更多</a>
+				</div>
+			</div>	
+			
+
+		</div>
+	</body>
+	<style>
+		/* 通用选择器 */
+		* {
+			/* 去掉导航栏周围没用的边距 */
+			margin: 0;
+			padding: 0;
+			/* 去掉不必要的样式 */
+			text-decoration: none;
+			
+			list-style: none;/* 去掉a元素前面的小点点 */
+			box-sizing: border-box;/* 标准盒子 */
+		  }
+		  
+		 
+		  .menu-bar{
+			/* 设置长条导航栏 */
+			height: 60px;
+			width: 100%;
+			
+		 
+		  }
+		  .logo{
+			float: left;
+			width: 150px;
+			height: 50px;
+			text-align: center;
+			line-height: 50px;
+			position: relative;
+			top: 5px;
+			left: 5px;
+		 
+			font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+			color: white;
+		  }
+		 
+		 
+		.libt{
+			
+			float: left;
+			width: 80px;
+			height: 40px;
+			
+			text-align: center;
+			line-height: 60px;
+		}
+		 
+		 
+		/* 设置超链接样式 */
+		.libt a{
+			color: rgba(255, 255, 255, 0.5);
+			display: block;/* 块状点击 */
+		 
+		}
+		 
+		.libt a:hover{
+			color:white ;
+			font-size: 19px;
+			transition: 0.5s;
+		}
+		 
+		/* 二级菜单栏设置 */
+		.dropdown-menu{
+			width: 100px;
+			background-color: white ;
+			/* 隐藏下拉菜单栏 */
+			
+			display: none;/* 不为被隐藏的对象保留其物理空间，即该对象在页面上彻底消失，通俗来说就是看不见也摸不到 */
+			border-radius: 5px;
+			position: relative;
+			top: -10px;
+			left: 6px;
+			
+		}
+		 
+		.down a{
+			color: rgba(0, 0, 0, 0.7);
+			
+		}
+		 
+		.down a:hover{
+			color:black ;
+			font-size: 19px;
+			transition: 0.5s;
+			
+		}
+		/* 这里设置显示下拉菜单栏 */
+		.libt:hover .dropdown-menu {
+			display: block;
+			
+		 
+		}
+			/* transition: 0.3s; */
+			/* border-radius: 15px; */
+		.righ{
+			float: right;
+			margin-right: 10px;
+		}
+		 
+		 
+		.message{
+			width: 15px;
+			height: 15px;
+			display: block;/* 将行内元素变为块级元素 */
+			background-color: red;
+			border-radius: 50%;
+			text-align: center;
+			line-height: 15px;
+			color: white;
+			position: relative;
+			font-size: small;
+		 
+			float: right;
+			right: 5px;
+			bottom: 8px;
+		}
+		 
+		/* 消息编辑栏 */
+		.dropdown-menu2{
+			width: 230px;
+			height: 300px;
+			background:white;
+			border-radius: 5px;
+			position: relative;
+			right: 100px;
+			top: -10px;
+			display: none;
+			/* 使得信息列表位于最高层 */
+			z-index:9999;
+		}
+		.libt:hover .dropdown-menu2{
+			display: block;
+			
+		}
+		.item{
+			/* 弹性盒布局 */
+			
+			height:80px;
+			display: flex;
+			justify-content: space-between; /* 均匀排列每个元素，首个元素放置于起点，末尾元素放置于终点 */
+			align-items: center; /* 居中排列 */
+			
+			
+			padding:5px 10px;
+			position: relative;
+			top: 10px;
+			left: 5px;
+			
+		}
+		 
+		.photo1 img{
+			width: 60px;
+			height: 60px;
+			border-radius: 50%;
+			float: left;
+			margin:0;
+		 
+		}
+		.content-box{
+			margin-top: 10px;
+			margin-left: 10px;	
+			flex: 1;/* flex属性 是 flex-grow、flex-shrink、flex-basis三个属性的缩写，将内容区flex：1，内容区则会自动放大占满剩余空间 */
+			
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+		.name{
+			width: 80px;
+			height: 20px;
+			padding: 0px;
+			text-align: start;
+			line-height: 20px;
+			position: relative;
+			top: -8px;
+		}
+		.text{
+			width: 110px;
+			height: 20px;
+			padding: 0px;
+			
+			text-align: start;
+			line-height: 20px;
+			font-size: small;
+			
+		}
+		 
+		.view{
+			
+			width: 170px;
+			margin:15px auto auto;
+			height: 20px;
+			text-align: center;
+			line-height: 20px;
+			color: rgba(0, 0, 0, 0.5);
+			border-top: 1px solid rgba(0, 0, 0, 0.2);
+			padding: 10px;
+			cursor: pointer;
+		} 
+		 
+		/* 加上发送信息的时间和小红点 */
+		.action{
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			position: relative;
+			right: 8px;
+			top:-3px;
+		}
+		.time{
+			width: 30px;
+			height: 10px;
+			color: rgba(0, 0, 0, 0.5);
+			font-size: 5px;
+			text-align: center;
+			line-height: 10px;
+			margin:0 10px 10px 0;
+		}
+		.unread{
+			width:8px;
+			height: 8px;
+			border-radius: 50%;
+			background-color: red;
+			margin-top: 8px;
+		}
+		
+		.container{
+			
+			width: 100%;
+			height: 100vh;
+			background-image:  linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.5)),url(格鲁.jpg);
+			background-position: right bottom;
+			background-repeat: no-repeat;
+			
+		 
+		}
+		.img{
+			width: 100%;
+			height: 100vh;
+			display: flex;
+		 
+		}
+		/* 对介绍卡片进行弹性盒布局 */
+		.introduction{
+			display: flex;
+			justify-content: center;
+			/* 元素位于容器的中心 */
+			align-items: center;
+			position: relative;
+			top: 100px;
+			
+		}
+		.card{
+			position: relative;
+			width: 300px;
+			height:450px;
+			margin: 20px;
+			background-color: rgba(255,255, 255, 0.5);
+			border-radius: 20px;
+			/* 溢出隐藏 */
+			overflow: hidden;
+			/* 弹性布局 */
+			display: flex;
+			/* 图片字体纵向排列 */
+			flex-direction: column;
+			/* 图片、字体居中 */
+			align-items: center;
+			color: white;
+			/* 盒子阴影 */
+			box-shadow: 0 0 30px rgba(0,0,0,0.5);
+		 
+		}
+		 
+		.card .photo img{
+			width: 100%;
+			height: 100%;
+			/* 保持原有尺寸比例，裁截长边 */
+			object-fit: cover;
+		}
+		 
+		 
+		.card .photo{
+			/* 使得照片关于card进行定位 */
+			position: absolute;
+		 
+			top: 0;
+			/* 让图片填满整个card */
+			width: 100%;
+			height: 100%;
+			
+			overflow: hidden;
+			transition: 0.5s;
+		}
+		 
+		/* 鼠标移入变小图 */
+		.card:hover .photo{
+			top: 30px;
+			width: 120px;
+			height: 120px;
+			border-radius: 50%;
+			box-shadow: 0 0 20px rgba(0,0,0,0.8);
+		}
+		.card h1{
+			/* 使得h1关于card进行定位 */
+			position: absolute;
+			
+			color: black;
+			top: 5px;
+			transition: 0.5s;
+			
+		}
+		.card:hover h1{
+			top:170px;
+			color: white;
+			width: 80%;
+			text-align: center;
+			border-bottom: 1px solid rgba(255,255, 255, 0.3);
+			margin-bottom: 20px;
+			padding-bottom: 20px;
+		}
+		 
+		 
+		.card p{
+			margin-top: 260px;
+			width: 90%;
+			/* 缩进两个字符 */
+			text-indent: 2em;
+			font-size: 16px;
+			margin-bottom: 15px;
+			line-height: 25px;
+		}
+		.card a{
+			font-size: 14px;
+			color: rgba(255,255, 255, 0.8);
+			border: 1px solid rgba(255,255, 255, 0.5);
+			padding: 8px 32px;
+			border-radius: 8px;
+		 
+		}
+		.card a:hover{
+			color: white;
+			background-color: rgba(0,0,0,0.2);
+		}
+	</style>
+</html>
+
